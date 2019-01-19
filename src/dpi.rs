@@ -83,7 +83,7 @@
 /// otherwise, you risk panics.
 #[inline]
 pub fn validate_hidpi_factor(dpi_factor: f64) -> bool {
-    dpi_factor.is_sign_positive() && dpi_factor.is_normal()
+    dpi_factor.is_sign_positive()
 }
 
 /// A position represented in logical pixels.
