@@ -1,4 +1,4 @@
-#![cfg(any(target_os = "emscripten", target_arch = "wasm32"))]
+#![cfg(target_os = "emscripten")]
 
 mod ffi;
 
