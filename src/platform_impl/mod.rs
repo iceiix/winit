@@ -18,9 +18,14 @@ mod platform;
 #[cfg(target_os = "emscripten")]
 #[path="emscripten/mod.rs"]
 mod platform;
+#[cfg(target_arch = "wasm32")]
+#[path="wasm32/mod.rs"]
+mod platform;
+
 
 #[cfg(all(not(target_os = "ios"), not(target_os = "windows"), not(target_os = "linux"),
   not(target_os = "macos"), not(target_os = "android"), not(target_os = "dragonfly"),
   not(target_os = "freebsd"), not(target_os = "netbsd"), not(target_os = "openbsd"),
+  not(target_arch = "wasm32"),
   not(target_os = "emscripten")))]
 compile_error!("The platform you're compiling for is not supported by winit");
